@@ -1,0 +1,209 @@
+/*=============== FONTS ===============*/
+@import url("");
+
+@font-face {
+  font-family: "font-1";
+  src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: "font-2";
+  src: url(../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: "font-3";
+  src: url(../fonts/GT-Ultra-Standard-Bold-Trial.woff2);
+}
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --color1: #060447;
+  --color2: #FFF38A;
+  --color3: #827B68;
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*::selection {
+  background-color: var(--color3);
+}
+
+body {
+  font-family: "font-1";
+  font-size: 1rem;
+  color: var(--color2);
+  background-color: var(--color1);
+}
+
+/*=============== MAIN ===============*/
+main {
+  height: 100vh;
+  width: 100vw;
+  padding: 10%;
+}
+
+.main_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 10% 3fr 1fr;
+  height: 100%;
+  width: 100%;
+}
+
+.main_text {
+  grid-row: 1;
+  grid-column: 1;
+}
+.main_date {
+  grid-row: 3;
+  grid-column: 1;
+  align-self: end;
+}
+.main_image {
+  grid-row: 1 / 4;
+  grid-column: 2;
+  justify-self: end;
+}
+.main_swiper {
+  grid-row: 4;
+  grid-column: 1 / 3;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logo {
+  height: 80px;
+  width: 80px;
+}
+
+h1 {
+  font-family: "font-2";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  width: 354px;
+}
+h2 {
+  font-family: "font-1";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  width: 422px;
+}
+
+.text_date {
+  font-family: "font-3";
+  font-size: 230px;
+  align-self: end;
+}
+
+#img {
+  height: 92%;
+  width: 100%;
+}
+
+.fleche {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.ri-checkbox-blank-circle-fill {
+  font-size: 30px;
+  color: var(--color3);
+  z-index: 1;
+}
+
+.logo_fleche {
+  font-size: 35px;
+  color: var(--color3);
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  position: relative;
+}
+
+.active {
+  color: var(--color2);
+}
+
+#btn-1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  height: 2px;
+  width: 0%;
+  background-color: var(--color2);
+  z-index: 10;
+  visibility: hidden;
+  animation: animAfter1 1s ease;
+}
+
+@keyframes animAfter1 {
+  to {
+    width: 24%;
+  }
+}
+
+
+#btn-2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 26%;
+  height: 2px;
+  width: 24%;
+  background-color: var(--color2);
+  z-index: 10;
+  visibility: hidden;
+}
+
+
+.ri-checkbox-blank-circle-fill::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 28px;
+  height: 1px;
+  width: 95%;
+  background-color: var(--color3);
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
