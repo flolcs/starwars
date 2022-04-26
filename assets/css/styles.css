@@ -49,7 +49,11 @@ body {
 main {
   height: 100vh;
   width: 100vw;
-  padding: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
 }
 
 .main_grid {
@@ -72,7 +76,7 @@ main {
 .main_image {
   grid-row: 1 / 4;
   grid-column: 2;
-  justify-self: end;
+  position: relative;
 }
 .main_swiper {
   grid-row: 4;
@@ -93,27 +97,30 @@ main {
 h1 {
   font-family: "font-2";
   font-weight: 700;
-  font-size: 40px;
+  font-size: 34px;
   line-height: 49px;
   width: 354px;
 }
 h2 {
   font-family: "font-1";
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 30px;
-  width: 422px;
+  width: 400px;
 }
 
 .text_date {
   font-family: "font-3";
-  font-size: 230px;
+  font-size: 150px;
   align-self: end;
 }
 
 #img {
-  height: 92%;
+  height: 100%;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .fleche {
