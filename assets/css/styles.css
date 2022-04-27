@@ -63,15 +63,17 @@ main {
   height: 100%;
   width: 100%;
 }
-
 .main_text {
   grid-row: 1;
   grid-column: 1;
+  visibility: hidden;
 }
 .main_date {
   grid-row: 3;
   grid-column: 1;
   align-self: end;
+  display: flex;
+  flex-direction: row;
 }
 .main_image {
   grid-row: 1 / 4;
@@ -87,6 +89,22 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.textActive  {
+  visibility: visible;
+  animation: fadeIn linear 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 #logo {
@@ -111,16 +129,32 @@ h2 {
 
 .text_date {
   font-family: "font-3";
-  font-size: 150px;
+  font-size: 200px;
   align-self: end;
+  display: none;
 }
 
-#img {
-  height: 100%;
-  width: 100%;
+.dateActive {
+  display: block;
+  animation: fadeIn linear 1s;
+}
+
+
+
+.img {
+  height: 93%;
+  width: 0%;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
+  visibility: hidden;
+  transition: 1s ease;
+}
+
+.imgActive {
+  visibility: visible;
+  width: 68%;
+  transition: 1s ease;
 }
 
 .fleche {
