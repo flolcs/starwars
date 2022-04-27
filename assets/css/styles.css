@@ -66,7 +66,7 @@ main {
 .main_text {
   grid-row: 1;
   grid-column: 1;
-  visibility: hidden;
+  animation: fadeOut 0.5s forwards;
 }
 .main_date {
   grid-row: 3;
@@ -74,6 +74,7 @@ main {
   align-self: end;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 .main_image {
   grid-row: 1 / 4;
@@ -92,8 +93,7 @@ main {
 }
 
 .textActive  {
-  visibility: visible;
-  animation: fadeIn linear 1s;
+  animation: fadeIn 0.5s forwards;
 }
 
 @keyframes fadeIn {
@@ -104,6 +104,17 @@ main {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-10%);
   }
 }
 
@@ -132,29 +143,26 @@ h2 {
   font-size: 200px;
   align-self: end;
   display: none;
+  animation: fadeOut 0.5s forwards;
 }
 
 .dateActive {
   display: block;
-  animation: fadeIn linear 1s;
+  animation: fadeIn 0.5s forwards;
 }
 
-
-
 .img {
-  height: 93%;
-  width: 0%;
+  height: 92%;
+  width: 68%;
+  min-width: 350px; 
   position: absolute;
   top: 0;
   right: 0;
-  visibility: hidden;
-  transition: 1s ease;
+  animation: fadeOut 0.5s ease forwards;
 }
 
 .imgActive {
-  visibility: visible;
-  width: 68%;
-  transition: 1s ease;
+  animation: fadeIn 0.5s ease forwards;
 }
 
 .fleche {
@@ -174,16 +182,7 @@ h2 {
 
 .fleche_active {
   color: var(--color2);
-}
-
-
-.circle {
-  background-color: var(--color3);
-  height: 32px;
-  width: 32px;
-  border-radius: 50px;
-  position: relative;
-  z-index: 1000;
+  transition: 0.5s;
 }
 
 .active {
@@ -193,46 +192,82 @@ h2 {
 
 .pagination {
   width: 80%;
-}
-
-.pagination_container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
   position: relative;
 }
 
 .pagination_container::before {
   content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background-color: var(--color3);
   height: 2px;
   width: 100%;
-  z-index: -1;
+  background-color: var(--color3);
+  position: absolute;
+}
+
+.pagination_container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.circle_progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.circle {
+  height: 32px;
+  width: 32px;
+  background-color: var(--color3);
+  border-radius: 50px;
+  z-index: 1000;
+}
+
+.active {
+  background-color: var(--color2);
+  transition: .5s;
+}
+
+.dynamic_progress {
+  background-color: var(--color2);
+  height: 2px;
+  position: absolute;
+  animation: animProgressOut 0.5s ease forwards;
 }
 
 .progressActive {
-  position: absolute;
-  top: 50%;
-  left: 32px;
-  background-color: var(--color2);
-  height: 2px;
-  width: 0%;
-  animation: animProgress1 0.5s forwards;
+  animation: animProgressIn 0.5s ease forwards;
 }
 
-@keyframes animProgress1 {
+@keyframes animProgressIn {
+  from {
+    width: 0%;
+  }
   to {
-    width: 600%;
+    width: 25%;
   }
 }
 
+@keyframes animProgressOut {
+  from {
+    width: 25%;
+  }
+  to {
+    width: 0%;
+  }
+}
 
-
+/* RESPONSIVE */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  main {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
 
 
 

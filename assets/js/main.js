@@ -10,11 +10,9 @@ const progress2 = document.querySelector(".progress2");
 flecheDroite.addEventListener("click", () => {
   flecheGauche.classList.add("fleche_active");
   if (progress1.className === "dynamic_progress progress1") {
-    progress1.classList.remove("progressDesactive");
     progress1.classList.add("progressActive");
     circle2.classList.add("active");
   } else if (progress2.className === "dynamic_progress progress2") {
-    progress2.classList.remove("progressDesactive");
     progress2.classList.add("progressActive");
     circle3.classList.add("active");
   }
